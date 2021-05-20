@@ -7,7 +7,7 @@ all:
         channel: test-app-ch
         target: test-app-dev
       helm:
-        url: https://github.com/juanchiriera/ans-deploy/tree/dev
+        url: https://github.com/juanchiriera/helm-deploy-demo/tree/dev
         insecureSkipVerify: true
         chart:
           name: sample-acm-helm-app
