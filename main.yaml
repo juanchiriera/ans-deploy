@@ -1,4 +1,32 @@
 - hosts: localhost
   connection: local
   roles:
-  - acm-helm
+    - acm-helm
+  vars:
+    undeploy: false
+    prefix: helloworld
+    namespace:
+      channel: test-app-ch
+      target: test-app-dev
+    helm:
+      url: https://raw.githubusercontent.com/juanchiriera/helm-deploy-demo/dev
+      insecureSkipVerify: true
+      chart:
+        name: sample-acm-helm-app
+        alias: sample
+        version: 0.1.4
+      user:
+      accessToken:
+    labels:
+      app: helloworld-app
+    cluster:
+      replicas: 1
+      selector:
+        matchLabels:
+          env: development
+    app:
+      matchExpressions:
+        - key: app
+          operator: In
+          values:
+            - helloworld-app
