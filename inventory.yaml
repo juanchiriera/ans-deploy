@@ -1,4 +1,5 @@
 all:
+  undeploy: false
   hosts:
     localhost:
       undeploy: no
