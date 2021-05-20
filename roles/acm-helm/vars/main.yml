@@ -4,7 +4,7 @@ namespace:
   channel: test-app-ch
   target: test-app-test
 helm:
-  url: https://github.com/juanchiriera/helm-deploy-demo/tree/test
+  url: https://raw.githubusercontent.com/juanchiriera/helm-deploy-demo/test
   insecureSkipVerify: true
   chart:
     name: sample-acm-helm-app
