@@ -5,26 +5,26 @@ all:
       prefix: helloworld
       namespace:
         channel: test-app-ch
-        target: test-app
+        target: test-app-test
       helm:
-        url: https://raw.githubusercontent.com/mgohashi/helm-repo/master/
+        url: https://github.com/juanchiriera/ans-deploy/tree/test
         insecureSkipVerify: true
         chart:
           name: sample-acm-helm-app
           alias: sample
           version: 0.1.3
-        user: 
-        accessToken: 
+        user:
+        accessToken:
       labels:
         app: helloworld-app
       cluster:
         replicas: 1
         selector:
           matchLabels:
-            env: development
+            env: test
       app:
         matchExpressions:
-        - key: app
-          operator: In
-          values:
-            - helloworld-app
+          - key: app
+            operator: In
+            values:
+              - helloworld-app
