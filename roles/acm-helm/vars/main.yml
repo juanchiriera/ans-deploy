@@ -1,2 +1,27 @@
----
-# vars file for acm-helm
+undeploy: false
+prefix: helloworld
+namespace:
+  channel: test-app-ch
+  target: test-app-test
+helm:
+  url: https://github.com/juanchiriera/helm-deploy-demo/tree/test
+  insecureSkipVerify: true
+  chart:
+    name: sample-acm-helm-app
+    alias: sample
+    version: 0.1.4
+  user:
+  accessToken:
+labels:
+  app: helloworld-app
+cluster:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: test
+app:
+  matchExpressions:
+    - key: app
+      operator: In
+      values:
+        - helloworld-app
