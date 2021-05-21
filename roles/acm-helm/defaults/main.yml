@@ -9,7 +9,7 @@ helm:
   chart:
     name: sample-acm-helm-app
     alias: sample
-    version: 0.1.4
+    version: 0.1.3
   user:
   accessToken:
 labels:
